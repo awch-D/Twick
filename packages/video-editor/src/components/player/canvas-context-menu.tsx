@@ -64,7 +64,7 @@ export const CanvasContextMenu: React.FC<CanvasContextMenuProps> = ({
         onClick={() => handleAction(onBringToFront)}
         role="menuitem"
       >
-        Bring to Front
+        置于顶层
       </button>
       <button
         type="button"
@@ -72,7 +72,7 @@ export const CanvasContextMenu: React.FC<CanvasContextMenuProps> = ({
         onClick={() => handleAction(onBringForward)}
         role="menuitem"
       >
-        Bring Forward
+        上移一层
       </button>
       <button
         type="button"
@@ -80,7 +80,7 @@ export const CanvasContextMenu: React.FC<CanvasContextMenuProps> = ({
         onClick={() => handleAction(onSendBackward)}
         role="menuitem"
       >
-        Send Backward
+        下移一层
       </button>
       <button
         type="button"
@@ -88,7 +88,7 @@ export const CanvasContextMenu: React.FC<CanvasContextMenuProps> = ({
         onClick={() => handleAction(onSendToBack)}
         role="menuitem"
       >
-        Send to Back
+        置于底层
       </button>
       <div className="twick-canvas-context-menu-separator" role="separator" />
       <button
@@ -97,7 +97,7 @@ export const CanvasContextMenu: React.FC<CanvasContextMenuProps> = ({
         onClick={() => handleAction(onDelete)}
         role="menuitem"
       >
-        Delete
+        删除
       </button>
     </div>
   );

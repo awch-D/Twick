@@ -87,16 +87,16 @@ export function Animation({
 
   return (
     <div className="panel-container">
-      <div className="panel-title">Animations</div>
+      <div className="panel-title">动画</div>
       {/* Animation Selection */}
       <div className="panel-section">
-        <label className="label-dark">Type</label>
+        <label className="label-dark">类型</label>
         <select
           value={currentAnimation?.getName() || ""}
           onChange={(e) => handleUpdateAnimation({ name: e.target.value })}
           className="select-dark w-full"
         >
-          <option value="">No Animation</option>
+          <option value="">无动画</option>
           {ANIMATIONS.map((animation) => (
             <option key={animation.name} value={animation.name}>
               {animation.name.charAt(0).toUpperCase() + animation.name.slice(1)}
@@ -120,7 +120,7 @@ export function Animation({
                   {/* Animate */}
                   {animationDef.options?.animate && (
                     <div className="panel-section">
-                      <label className="label-dark">When to Animate</label>
+                      <label className="label-dark">动画时机</label>
                       <select
                         value={currentAnimation.getAnimate()}
                         onChange={(e) =>
@@ -145,7 +145,7 @@ export function Animation({
                   {/* Direction */}
                   {animationDef.options?.direction && (
                     <div className="panel-section">
-                      <label className="label-dark">Direction</label>
+                      <label className="label-dark">方向</label>
                       <select
                         value={currentAnimation.getDirection()}
                         onChange={(e) =>
@@ -172,7 +172,7 @@ export function Animation({
                   {/* Mode */}
                   {animationDef.options?.mode && (
                     <div className="panel-section">
-                      <label className="label-dark">Mode</label>
+                      <label className="label-dark">模式</label>
                       <select
                         value={currentAnimation.getMode()}
                         onChange={(e) =>
@@ -194,7 +194,7 @@ export function Animation({
                   {/* Duration */}
                   {animationDef.options?.duration && (
                     <div className="panel-section">
-                      <label className="label-dark">Duration (seconds)</label>
+                      <label className="label-dark">时长（秒）</label>
                       <div className="slider-container">
                         <input
                           type="range"
@@ -217,7 +217,7 @@ export function Animation({
                   {/* Interval */}
                   {animationDef.options?.interval && (
                     <div className="panel-section">
-                      <label className="label-dark">Interval (seconds)</label>
+                      <label className="label-dark">间隔（秒）</label>
                       <div className="slider-container">
                         <input
                           type="range"
@@ -240,7 +240,7 @@ export function Animation({
                   {/* Intensity */}
                   {animationDef.options?.intensity && (
                     <div className="panel-section">
-                      <label className="label-dark">Intensity</label>
+                      <label className="label-dark">强度</label>
                       <div className="slider-container">
                         <input
                           type="range"

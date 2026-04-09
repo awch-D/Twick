@@ -42,7 +42,7 @@ export function ImagePanel({
 }: ImagePanelProps) {
   return (
     <div className="panel-container">
-      <div className="panel-title">Image Library</div>
+      <div className="panel-title">图片库</div>
 
       {/* Add by URL */}
       {showAddByUrl && (
@@ -89,7 +89,7 @@ export function ImagePanel({
           <div className="empty-state">
             <div className="empty-state-content">
               <Wand2 className="empty-state-icon" />
-              <p className="empty-state-text">No images found</p>
+              <p className="empty-state-text">暂无图片</p>
             </div>
           </div>
         )}
@@ -102,7 +102,7 @@ export function ImagePanel({
               onClick={onLoadMore}
               disabled={isLoading}
             >
-              {isLoading ? "Loading..." : "Load more"}
+              {isLoading ? "加载中..." : "加载更多"}
             </button>
           </div>
         )}

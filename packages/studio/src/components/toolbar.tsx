@@ -37,18 +37,16 @@ import type { ToolCategory } from '../types'
 const defaultToolCategories: ToolCategory[] = [
   // { id: 'templates', name: 'Templates', icon: 'Plus', description: 'Start from a project template' },
   // { id: 'record', name: 'Record', icon: 'Upload', description: 'Record screen and import clip' },
-  { id: 'video', name: 'Video', icon: 'Video', description: 'Add a video element' },
-  { id: 'image', name: 'Image', icon: 'Image', description: 'Add an image element' },
-  { id: 'audio', name: 'Audio', icon: 'Audio', description: 'Add an audio element' },
-  { id: 'text', name: 'Text', icon: 'Type', description: 'Add text elements' },
-  { id: 'emoji', name: 'Emoji', icon: 'Smile', description: 'Add emoji stickers' },
-  { id: 'text-style', name: 'Text Style', icon: 'Type', description: 'Apply text style presets' },
-  { id: 'effect', name: 'Effect', icon: 'Wand2', description: 'Apply GL video effects' },
-  { id: 'shape', name: 'Shape', icon: 'Square', description: 'Add lines, arrows, boxes, and circles' },
-  // { id: 'chapters', name: 'Chapters', icon: 'File', description: 'Manage chapter markers' },
-  // { id: 'script', name: 'Script', icon: 'Type', description: 'Build timeline from a script outline' },
-  { id: 'caption', name: 'Caption', icon: 'MessageSquare', description: 'Manage captions'},
-  { id: 'generate-media', name: 'Generate', icon: 'Wand2', description: 'Generate image or video with AI'},
+  { id: 'video', name: '视频', icon: 'Video', description: '添加视频元素' },
+  { id: 'image', name: '图片', icon: 'Image', description: '添加图片元素' },
+  { id: 'audio', name: '音频', icon: 'Audio', description: '添加音频元素' },
+  { id: 'text', name: '文字', icon: 'Type', description: '添加文字元素' },
+  { id: 'emoji', name: '表情', icon: 'Smile', description: '添加表情贴纸' },
+  { id: 'text-style', name: '文字样式', icon: 'Type', description: '应用文字样式预设' },
+  { id: 'effect', name: '特效', icon: 'Wand2', description: '应用 GL 视频特效' },
+  { id: 'shape', name: '形状', icon: 'Square', description: '添加线条、箭头、方框和圆形' },
+  { id: 'caption', name: '字幕', icon: 'MessageSquare', description: '管理字幕'},
+  { id: 'generate-media', name: '生成', icon: 'Wand2', description: 'AI 生成图片或视频'},
 ]
 
 const getIcon = (iconName: string) => {

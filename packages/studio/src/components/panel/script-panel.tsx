@@ -50,18 +50,18 @@ export const ScriptPanel = ({ videoResolution }: PanelProps): React.ReactElement
   return (
     <div className="panel-container">
       <div className="panel-header">
-        <h3>Script</h3>
+        <h3>脚本</h3>
       </div>
       <div className="panel-content" style={{ display: "grid", gap: "10px" }}>
         <textarea
           className="input-dark"
           rows={10}
-          placeholder="Paste script outline (one section per line)"
+          placeholder="粘贴脚本大纲（每行一个段落）"
           value={script}
           onChange={(e) => setScript(e.target.value)}
         />
         <button className="btn-primary" onClick={buildTimelineFromScript}>
-          Generate Timeline From Outline
+          从大纲生成时间轴
         </button>
       </div>
     </div>

@@ -169,7 +169,7 @@ export function GenerateCaptionsPanel({
 
   return (
     <div className="panel-container">
-      <div className="panel-title">Generate Captions Panel</div>
+      <div className="panel-title">生成字幕</div>
       
       {/* Loading State */}
       {isLoading && (
@@ -177,7 +177,7 @@ export function GenerateCaptionsPanel({
           <div className="empty-state">
             <div className="empty-state-content">
               <Loader2 className="empty-state-icon animate-spin" />
-              <p className="empty-state-text">Checking for audio...</p>
+              <p className="empty-state-text">检测音频中...</p>
             </div>
           </div>
         </div>
@@ -189,7 +189,7 @@ export function GenerateCaptionsPanel({
           <div className="empty-state">
             <div className="empty-state-content">
               <VolumeX className="empty-state-icon" />
-              <p className="empty-state-text">No audio track found in this video</p>
+              <p className="empty-state-text">该视频未检测到音频轨道</p>
             </div>
           </div>
         </div>
@@ -201,7 +201,7 @@ export function GenerateCaptionsPanel({
           <div className="empty-state">
             <div className="empty-state-content">
               <Volume2 className="empty-state-icon" />
-              <p className="empty-state-text">Audio detected! You can now generate captions</p>
+              <p className="empty-state-text">已检测到音频，可以生成字幕</p>
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@ export function GenerateCaptionsPanel({
       {!isLoading && containsAudio === true && (
         <div className="panel-section">
           <label className="label-dark" htmlFor="caption-language">
-            Audio Language
+            音频语言
           </label>
           <select
             id="caption-language"
@@ -219,16 +219,16 @@ export function GenerateCaptionsPanel({
             value={selectedLanguage}
             onChange={(e) => setSelectedLanguage(e.target.value)}
           >
-            <option value="auto">Auto (detect)</option>
-            <option value="english">English</option>
-            <option value="italian">Italian</option>
-            <option value="spanish">Spanish</option>
-            <option value="portuguese">Portuguese</option>
-            <option value="french">French</option>
-            <option value="german">German</option>
-            <option value="turkish">Turkish</option>
-            <option value="indonesian">Indonesian</option>
-            <option value="hindi">Hindi</option>
+            <option value="auto">自动检测</option>
+            <option value="english">英语</option>
+            <option value="italian">意大利语</option>
+            <option value="spanish">西班牙语</option>
+            <option value="portuguese">葡萄牙语</option>
+            <option value="french">法语</option>
+            <option value="german">德语</option>
+            <option value="turkish">土耳其语</option>
+            <option value="indonesian">印尼语</option>
+            <option value="hindi">印地语</option>
           </select>
         </div>
       )}
@@ -236,7 +236,7 @@ export function GenerateCaptionsPanel({
       {!isLoading && containsAudio === true && (
         <div className="panel-section">
           <label className="label-dark" htmlFor="caption-phrase-length">
-            Caption length
+            字幕长度
           </label>
           <select
             id="caption-phrase-length"
@@ -246,9 +246,9 @@ export function GenerateCaptionsPanel({
               setPhraseLength(e.target.value as CaptionPhraseLength)
             }
           >
-            <option value="short">Short</option>
-            <option value="medium">Medium</option>
-            <option value="long">Long</option>
+            <option value="short">短</option>
+            <option value="medium">中</option>
+            <option value="long">长</option>
           </select>
         </div>
       )}
@@ -259,7 +259,7 @@ export function GenerateCaptionsPanel({
           <div className="empty-state">
             <div className="empty-state-content">
               <Loader2 className="empty-state-icon animate-spin" />
-              <p className="empty-state-text">Generating captions... Please wait</p>
+              <p className="empty-state-text">正在生成字幕，请稍候...</p>
             </div>
           </div>
         </div>
@@ -271,7 +271,7 @@ export function GenerateCaptionsPanel({
           <div className="empty-state">
             <div className="empty-state-content">
               <CheckCircle2 className="empty-state-icon" color="var(--color-green-500)" />
-              <p className="empty-state-text">Captions generated successfully!</p>
+              <p className="empty-state-text">字幕生成成功！</p>
             </div>
           </div>
         </div>
@@ -283,7 +283,7 @@ export function GenerateCaptionsPanel({
           <div className="empty-state">
             <div className="empty-state-content">
               <XCircle className="empty-state-icon" color="var(--color-red-500)" />
-              <p className="empty-state-text">{errorMessage || "Failed to generate captions"}</p>
+              <p className="empty-state-text">{errorMessage || "字幕生成失败"}</p>
             </div>
           </div>
         </div>
@@ -297,7 +297,7 @@ export function GenerateCaptionsPanel({
             disabled={!containsAudio || isGenerating}
             className="btn-primary w-full"
           >
-            {isGenerating ? "Generating..." : "Generate Captions"}
+            {isGenerating ? "生成中..." : "生成字幕"}
           </button>
         </div>
       )}

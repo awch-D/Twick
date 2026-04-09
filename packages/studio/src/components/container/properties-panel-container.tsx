@@ -78,10 +78,10 @@ export function PropertiesPanelContainer({
     <aside className="properties-panel" aria-label="Element properties inspector">
       <div className="properties-header">
         {!selectedElement && (
-          <h3 className="properties-title">Composition</h3>
+          <h3 className="properties-title">合成</h3>
         )}
         {selectedElement && selectedElement.getType() === "caption" && (
-          <h3 className="properties-title">Caption</h3>
+          <h3 className="properties-title">字幕</h3>
         )}
         {selectedElement && selectedElement.getType() !== "caption" && (
           <h3 className="properties-title">
@@ -94,16 +94,16 @@ export function PropertiesPanelContainer({
         {/* Composition inspector when nothing selected */}
         {!selectedElement && (
           <div className="panel-container">
-            <div className="panel-title">Canvas & Render</div>
+            <div className="panel-title">画布与渲染</div>
             <div className="properties-group">
               <div className="property-section">
-                <span className="property-label">Size</span>
+                <span className="property-label">尺寸</span>
                 <span className="properties-size-readonly">
                   {videoResolution.width} × {videoResolution.height}
                 </span>
               </div>
               <div className="color-control">
-                <label className="label-small">Background Color</label>
+                <label className="label-small">背景颜色</label>
                 <div className="color-inputs">
                   <input
                     type="color"

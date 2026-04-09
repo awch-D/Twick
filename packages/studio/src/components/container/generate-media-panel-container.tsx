@@ -92,29 +92,29 @@ export function GenerateMediaPanelContainer({
 
   const handleGenerate = useCallback(async () => {
     if (!prompt.trim()) {
-      setError("Enter a prompt");
+      setError("输入提示词");
       return;
     }
 
     if (tab === "image" && !imageService) {
-      setError("Image generation not configured");
+      setError("图片生成未配置");
       return;
     }
     if (tab === "video" && !videoService) {
-      setError("Video generation not configured");
+      setError("视频生成未配置");
       return;
     }
 
     setIsGenerating(true);
     setError(null);
-    setStatus("Starting...");
+    setStatus("启动中...");
 
     try {
       const endpointId = selectedEndpointId || defaultEndpointId;
       const provider = selectedProvider;
 
       if (!endpointId || !provider) {
-        setError("No model is configured for this tab");
+        setError("当前标签未配置模型");
         setIsGenerating(false);
         setStatus(null);
         return;
@@ -127,7 +127,7 @@ export function GenerateMediaPanelContainer({
           prompt: prompt.trim(),
         });
         if (requestId) {
-          setStatus("Generating image...");
+          setStatus("图片生成中...");
           pollStatus(requestId);
         }
       } else if (tab === "video" && videoService) {
@@ -137,12 +137,12 @@ export function GenerateMediaPanelContainer({
           prompt: prompt.trim(),
         });
         if (requestId) {
-          setStatus("Generating video (this may take several minutes)...");
+          setStatus("视频生成中（可能需要几分钟）...");
           pollStatus(requestId);
         }
       }
     } catch (err) {
-      const msg = err instanceof Error ? err.message : "Generation failed";
+      const msg = err instanceof Error ? err.message : "生成失败";
       setError(msg);
       setIsGenerating(false);
       setStatus(null);
@@ -162,8 +162,7 @@ export function GenerateMediaPanelContainer({
     return (
       <div className="panel-container">
         <p className="empty-state-text">
-          Image and video generation require configuration. Add imageGenerationService
-          and videoGenerationService to StudioConfig.
+          图片和视频生成需要配置服务，请在 StudioConfig 中添加相应服务。
         </p>
       </div>
     );
@@ -179,7 +178,7 @@ export function GenerateMediaPanelContainer({
             onClick={() => setTab("image")}
             disabled={!imageService}
           >
-            Image
+            图片
           </button>
           <button
             type="button"
@@ -187,12 +186,12 @@ export function GenerateMediaPanelContainer({
             onClick={() => setTab("video")}
             disabled={!videoService}
           >
-            Video
+            视频
           </button>
         </div>
 
         <div className="mb-2">
-          <label className="block text-sm mb-1">Model</label>
+          <label className="block text-sm mb-1">模型</label>
           <select
             className="w-full p-2 border rounded"
             value={selectedEndpointId}
@@ -208,12 +207,12 @@ export function GenerateMediaPanelContainer({
         </div>
 
         <div className="mb-2">
-          <label className="block text-sm mb-1">Prompt</label>
+          <label className="block text-sm mb-1">提示词</label>
           <textarea
             className="w-full p-2 border rounded min-h-[80px]"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="Describe the image or video you want..."
+            placeholder="描述你想要的图片或视频..."
             disabled={isGenerating}
           />
         </div>
@@ -232,7 +231,7 @@ export function GenerateMediaPanelContainer({
           onClick={handleGenerate}
           disabled={isGenerating || !prompt.trim()}
         >
-          {isGenerating ? "Generating..." : `Generate ${tab}`}
+          {isGenerating ? "生成中..." : `生成${tab === "image" ? "图片" : "视频"}`}
         </button>
       </div>
     </div>

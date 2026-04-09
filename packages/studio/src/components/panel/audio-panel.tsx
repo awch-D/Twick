@@ -46,7 +46,7 @@ export const AudioPanel = ({
   const { playingAudio, togglePlayPause } = useAudioPreview();
   return (
     <div className="panel-container">
-      <div className="panel-title">Audio Library</div>
+      <div className="panel-title">音频库</div>
 
       {/* Add by URL */}
       <div className="panel-section">
@@ -117,7 +117,7 @@ export const AudioPanel = ({
           <div className="empty-state">
             <div className="empty-state-content">
               <Wand2 className="empty-state-icon" />
-              <p className="empty-state-text">No audio files found</p>
+              <p className="empty-state-text">暂无音频</p>
             </div>
           </div>
         )}
@@ -130,7 +130,7 @@ export const AudioPanel = ({
               onClick={onLoadMore}
               disabled={isLoading}
             >
-              {isLoading ? "Loading..." : "Load more"}
+              {isLoading ? "加载中..." : "加载更多"}
             </button>
           </div>
         )}

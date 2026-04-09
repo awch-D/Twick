@@ -22,7 +22,7 @@ export const AudioPanelContainer = (props: PanelProps) => {
               }`}
             onClick={() => setActiveSource("user")}
           >
-            My assets
+            我的素材
           </button>
           <button
             type="button"
@@ -30,7 +30,7 @@ export const AudioPanelContainer = (props: PanelProps) => {
               }`}
             onClick={() => setActiveSource("public")}
           >
-            Public
+            公共素材
           </button>
         </div>
       </div>
@@ -104,7 +104,7 @@ function AudioUserAssetsSection(props: PanelProps) {
             provider={props.uploadConfig.provider}
             accept="audio/*"
             onSuccess={onCloudUploadSuccess}
-            buttonText="Upload audio"
+            buttonText="上传音频"
             className="btn-ghost w-full"
           />
         </div>
@@ -186,7 +186,7 @@ function AudioPublicAssetsSection() {
       <div className="panel-section">
         <div className="property-row">
           <div className="property-row-label">
-            <span className="property-label">Provider</span>
+            <span className="property-label">来源</span>
           </div>
           <div className="property-row-control">
             <select
@@ -196,7 +196,7 @@ function AudioPublicAssetsSection() {
                 setActiveProviderId(e.target.value as string | "all")
               }
             >
-              <option value="all">All providers</option>
+              <option value="all">全部来源</option>
               {providerConfigs
                 .filter((p) => p.enabled)
                 .map((p) => (

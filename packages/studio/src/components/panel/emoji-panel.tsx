@@ -28,11 +28,11 @@ export function EmojiPanel({ items, onItemSelect }: EmojiPanelProps) {
 
   return (
     <div className="panel-container">
-      <div className="panel-title">Emoji Stickers</div>
+      <div className="panel-title">表情贴纸</div>
       <div className="panel-section">
         <input
           type="text"
-          placeholder="Search emoji..."
+          placeholder="搜索表情..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="input-dark"
@@ -73,7 +73,7 @@ export function EmojiPanel({ items, onItemSelect }: EmojiPanelProps) {
       {filteredItems.length === 0 && (
         <div className="empty-state">
           <div className="empty-state-content">
-            <p className="empty-state-text">No emoji found</p>
+            <p className="empty-state-text">暂无表情</p>
           </div>
         </div>
       )}

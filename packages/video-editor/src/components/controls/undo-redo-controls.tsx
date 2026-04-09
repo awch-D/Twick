@@ -13,14 +13,14 @@ export const UndoRedoControls = ({ canUndo, canRedo, onUndo, onRedo }: UndoRedoC
       <button
         className={`control-btn${canUndo ? " active" : " btn-disabled"}`}
         onClick={onUndo}
-        aria-label="Undo last action"
+        aria-label="撤销"
       >
         <Undo2 size={18} strokeWidth={2} />
       </button>
 
       <button
         onClick={onRedo}
-        aria-label="Redo last undone action"
+        aria-label="重做"
         className={`control-btn${canRedo ? " active" : " btn-disabled"}`}
       >
         <Redo2 size={18} strokeWidth={2} />

@@ -64,17 +64,17 @@ export function ElementProps({ selectedElement, updateElement }: PropertiesPanel
 
   return (
     <div className="panel-container">
-      <div className="panel-title">Properties</div>
+      <div className="panel-title">属性</div>
 
       <AccordionItem
-        title="Transform"
+        title="变换"
         icon={<Ruler className="icon-sm" />}
         isOpen={isTransformOpen}
         onToggle={() => setIsTransformOpen((open) => !open)}
       >
         <div className="properties-group">
           <div className="property-section">
-            <PropertyRow label="Position X">
+            <PropertyRow label="X 位置">
               <input
                 type="number"
                 value={position.x ?? 0}
@@ -84,7 +84,7 @@ export function ElementProps({ selectedElement, updateElement }: PropertiesPanel
                 className="input-dark"
               />
             </PropertyRow>
-            <PropertyRow label="Position Y">
+            <PropertyRow label="Y 位置">
               <input
                 type="number"
                 value={position.y ?? 0}
@@ -99,7 +99,7 @@ export function ElementProps({ selectedElement, updateElement }: PropertiesPanel
           {/* Dimensions - for rect, circle only; image/video resize via canvas */}
           {hasShapeDimensions && dimensions && (
             <div className="property-section">
-              <PropertyRow label="Width">
+              <PropertyRow label="宽度">
                 <input
                   type="number"
                   min={1}
@@ -113,7 +113,7 @@ export function ElementProps({ selectedElement, updateElement }: PropertiesPanel
                   className="input-dark"
                 />
               </PropertyRow>
-              <PropertyRow label="Height">
+              <PropertyRow label="高度">
                 <input
                   type="number"
                   min={1}
@@ -133,7 +133,7 @@ export function ElementProps({ selectedElement, updateElement }: PropertiesPanel
           {/* Opacity */}
           <div className="property-section">
             <PropertyRow
-              label="Opacity"
+              label="不透明度"
               secondary={
                 <span>
                   {Math.round((opacity ?? 1) * 100)}
@@ -157,7 +157,7 @@ export function ElementProps({ selectedElement, updateElement }: PropertiesPanel
           {/* Rotation */}
           <div className="property-section">
             <PropertyRow
-              label="Rotation"
+              label="旋转"
               secondary={
                 <span>
                   {Math.round(rotation ?? 0)}

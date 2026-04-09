@@ -17,7 +17,7 @@
  */
 
 import type { Size } from "@twick/timeline";
-import { Save, Download, Clapperboard, File, Plus, RectangleVertical, RectangleHorizontal } from "lucide-react";
+import { Save, Download, File, Plus, RectangleVertical, RectangleHorizontal } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface StudioHeaderProps {
@@ -51,7 +51,7 @@ export const StudioHeader = ({
     if (nextOrientation === orientation) return;
 
     const confirmMessage =
-      "Changing orientation will create a new project with the new resolution. Do you want to continue?";
+      "切换方向将以新分辨率创建新项目，是否继续？";
 
     if (!window.confirm(confirmMessage)) {
       return;
@@ -75,95 +75,56 @@ export const StudioHeader = ({
   return (
     <header className="header">
       <div className="flex-container">
-        <Clapperboard className="icon-lg accent-purple" />
-        <h1 className="text-gradient">
-          Twick Studio
-        </h1>
-        <div className="header-separator"></div>
         <div className="flex-container" style={{ gap: "0.5rem" }}>
-          <span className="text-sm opacity-80">Orientation</span>
+          <span className="text-sm opacity-80">方向</span>
           <button
             className={`btn-ghost ${orientation === "vertical" ? "btn-primary" : ""}`}
-            title="Portrait (720×1280)"
+            title="竖屏 (720×1280)"
             onClick={() => handleOrientationChange("vertical")}
           >
             <RectangleVertical className="icon-sm" />
-
           </button>
           <button
             className={`btn-ghost ${orientation === "horizontal" ? "btn-primary" : ""}`}
-            title="Landscape (1280×720)"
+            title="横屏 (1280×720)"
             onClick={() => handleOrientationChange("horizontal")}
           >
             <RectangleHorizontal className="icon-sm" />
-
           </button>
         </div>
       </div>
       <div className="flex-container">
         <button
           className="btn-ghost"
-          title="New Project"
+          title="新建项目"
           onClick={onNewProject}
         >
           <Plus className="icon-sm" />
-          New Project
+          新建项目
         </button>
         <button
           className="btn-ghost"
-          title="Load Project"
+          title="加载项目"
           onClick={onLoadProject}
         >
           <File className="icon-sm" />
-          Load Project
+          加载项目
         </button>
         <button
           className="btn-ghost"
-          title="Save Draft"
+          title="保存草稿"
           onClick={onSaveProject}
         >
           <Save className="icon-sm" />
-          Save Draft
+          保存草稿
         </button>
-        {/* <button
-          className="btn-ghost"
-          title="Export captions as SRT"
-          onClick={() => onExportCaptions("srt")}
-        >
-          <Download className="icon-sm" />
-          SRT
-        </button>
-        <button
-          className="btn-ghost"
-          title="Export captions as VTT"
-          onClick={() => onExportCaptions("vtt")}
-        >
-          <Download className="icon-sm" />
-          VTT
-        </button>
-        <button
-          className="btn-ghost"
-          title="Export chapters as YouTube timestamps"
-          onClick={() => onExportChapters("youtube")}
-        >
-          <Download className="icon-sm" />
-          Chapters TXT
-        </button>
-        <button
-          className="btn-ghost"
-          title="Export chapters as JSON"
-          onClick={() => onExportChapters("json")}
-        >
-          <Download className="icon-sm" />
-          Chapters JSON
-        </button> */}
         <button
           className="btn-primary"
-          title="Export"
+          title="导出"
           onClick={onExportVideo}
         >
           <Download className="icon-sm" />
-          Export
+          导出
         </button>
       </div>
     </header>

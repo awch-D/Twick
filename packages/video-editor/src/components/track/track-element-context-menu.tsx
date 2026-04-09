@@ -107,7 +107,7 @@ export const TrackElementContextMenu: React.FC<TrackElementContextMenuProps> = (
         role="menuitem"
         style={!canSplit ? { opacity: 0.45, cursor: "not-allowed" } : undefined}
       >
-        Split at playhead
+        从播放头分割
       </button>
       <div className="twick-canvas-context-menu-separator" role="separator" />
       <button
@@ -116,7 +116,7 @@ export const TrackElementContextMenu: React.FC<TrackElementContextMenuProps> = (
         onClick={() => wrap(onDelete)}
         role="menuitem"
       >
-        Delete
+        删除
       </button>
     </div>
   );

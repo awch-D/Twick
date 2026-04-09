@@ -93,13 +93,13 @@ export function TextPanel({
 }: TextPanelProps) {
   return (
     <div className="panel-container">
-      <div className="panel-title">Text</div>
+      <div className="panel-title">文字</div>
       {/* Text Content */}
       <div className="flex panel-section">
         <input
           type="text"
           value={textContent}
-          placeholder="Sample"
+          placeholder="示例文字"
           onChange={(e) => setTextContent(e.target.value)}
           className="input-dark"
         />
@@ -107,7 +107,7 @@ export function TextPanel({
 
       {/* Font Size */}
       <div className="panel-section">
-        <label className="label-dark">Font Size</label>
+        <label className="label-dark">字号</label>
         <div className="slider-container">
           <input
             type="range"
@@ -123,7 +123,7 @@ export function TextPanel({
 
       {/* Font */}
       <div className="panel-section">
-        <label className="label-dark">Font</label>
+        <label className="label-dark">字体</label>
         <div className="font-controls">
           <select
             value={selectedFont}
@@ -153,11 +153,11 @@ export function TextPanel({
 
       {/* Colors */}
       <div className="panel-section">
-        <label className="label-dark">Colors</label>
+        <label className="label-dark">颜色</label>
         <div className="color-section">
           {/* Text Color */}
           <div className="color-control">
-            <label className="label-small">Text Color</label>
+            <label className="label-small">文字颜色</label>
             <div className="color-inputs">
               <input
                 type="color"
@@ -176,7 +176,7 @@ export function TextPanel({
 
           {/* Stroke Color */}
           <div className="color-control">
-            <label className="label-small">Stroke Color</label>
+            <label className="label-small">描边颜色</label>
             <div className="color-inputs">
               <input
                 type="color"
@@ -202,14 +202,14 @@ export function TextPanel({
                 onChange={(e) => setApplyShadow(e.target.checked)}
                 className="checkbox-purple"
               />
-              Apply Shadow
+              启用阴影
             </label>
           </div>
 
           {/* Shadow Color - Only shown when shadow is enabled */}
           {applyShadow && (
             <div className="color-control">
-              <label className="label-small">Shadow Color</label>
+              <label className="label-small">阴影颜色</label>
               <div className="color-inputs">
                 <input
                   type="color"
@@ -231,7 +231,7 @@ export function TextPanel({
 
       {/* Stroke Width */}
       <div className="panel-section">
-        <label className="label-dark">Stroke Width</label>
+        <label className="label-dark">描边宽度</label>
         <div className="slider-container">
           <input
             type="range"
@@ -248,7 +248,7 @@ export function TextPanel({
 
       {/* Background (optional) */}
       <div className="panel-section">
-        <label className="label-dark">Background</label>
+        <label className="label-dark">背景</label>
         <div className="color-section">
           <div className="checkbox-control">
             <label className="checkbox-label">
@@ -258,13 +258,13 @@ export function TextPanel({
                 onChange={(e) => setApplyBackground(e.target.checked)}
                 className="checkbox-purple"
               />
-              Apply Background
+              启用背景
             </label>
           </div>
           {applyBackground && (
             <>
               <div className="color-control">
-                <label className="label-small">Background Color</label>
+                <label className="label-small">背景颜色</label>
                 <div className="color-inputs">
                   <input
                     type="color"
@@ -281,7 +281,7 @@ export function TextPanel({
                 </div>
               </div>
               <div className="panel-section">
-                <label className="label-small">Background Opacity</label>
+                <label className="label-small">背景透明度</label>
                 <div className="slider-container">
                   <input
                     type="range"

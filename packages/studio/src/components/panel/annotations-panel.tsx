@@ -60,7 +60,7 @@ export const AnnotationsPanel = ({
   return (
     <div className="panel-container">
       <div className="panel-header">
-        <h3>Shapes</h3>
+        <h3>形状</h3>
       </div>
       <div
         className="panel-content"
@@ -92,7 +92,7 @@ export const AnnotationsPanel = ({
               marginBottom: 8,
             }}
           />
-          <div style={{ fontWeight: 600, marginBottom: 2 }}>Line</div>
+          <div style={{ fontWeight: 600, marginBottom: 2 }}>直线</div>
           <div style={{ fontSize: 12, opacity: 0.8 }}>
             Draw a straight segment to connect or underline.
           </div>
@@ -135,7 +135,7 @@ export const AnnotationsPanel = ({
               }}
             />
           </div>
-          <div style={{ fontWeight: 600, marginBottom: 2 }}>Arrow callout</div>
+          <div style={{ fontWeight: 600, marginBottom: 2 }}>箭头标注</div>
           <div style={{ fontSize: 12, opacity: 0.8 }}>
             Emphasize a button or region with a directional arrow.
           </div>
@@ -164,7 +164,7 @@ export const AnnotationsPanel = ({
               marginBottom: 8,
             }}
           />
-          <div style={{ fontWeight: 600, marginBottom: 2 }}>Box</div>
+          <div style={{ fontWeight: 600, marginBottom: 2 }}>方框</div>
           <div style={{ fontSize: 12, opacity: 0.8 }}>
             Draw attention to important text or UI with a soft highlight.
           </div>
@@ -195,7 +195,7 @@ export const AnnotationsPanel = ({
               alignSelf: "flex-start",
             }}
           />
-          <div style={{ fontWeight: 600, marginBottom: 2 }}>Circle</div>
+          <div style={{ fontWeight: 600, marginBottom: 2 }}>圆形</div>
           <div style={{ fontSize: 12, opacity: 0.8 }}>
             Add a circular callout or highlight area.
           </div>

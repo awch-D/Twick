@@ -63,17 +63,17 @@ export function CaptionsPanel({
     <div className="panel-container captions-panel">
       {/* Header */}
       <div className="captions-panel-header">
-        <h3 className="panel-title">Captions</h3>
+        <h3 className="panel-title">字幕</h3>
         <div className="captions-panel-header-meta">
           {captions.length === 0 ? (
-            <span className="captions-panel-count">No captions yet</span>
+            <span className="captions-panel-count">暂无字幕</span>
           ) : null}
           <button
             onClick={addCaption}
             className="btn-primary captions-panel-add-button"
-            title="Add caption"
+            title="添加字幕"
           >
-            Add caption
+            添加字幕
           </button>
         </div>
       </div>
@@ -81,16 +81,16 @@ export function CaptionsPanel({
       {/* Caption list */}
       {captions.length === 0 ? (
         <div className="panel-section captions-panel-empty">
-          <p className="captions-panel-empty-title">Start your first caption</p>
+          <p className="captions-panel-empty-title">添加第一条字幕</p>
           <p className="captions-panel-empty-subtitle">
-            Use the button above to add the first caption block for the active track.
+            点击上方按钮为当前轨道添加字幕。
           </p>
           <button
             onClick={addCaption}
             className="btn-primary captions-panel-empty-button"
-            title="Add first caption"
+            title="添加第一条字幕"
           >
-            Add caption
+            添加字幕
           </button>
         </div>
       ) : (
@@ -111,16 +111,16 @@ export function CaptionsPanel({
                   {caption.isCustom ? (
                     <span
                       className="captions-panel-custom"
-                      title="This caption overrides track defaults"
+                      title="此字幕覆盖轨道默认样式"
                     >
-                      Custom
+                      自定义
                     </span>
                   ) : null}
                 </div>
 
                 <div className="captions-panel-item-body">
                   <textarea
-                    placeholder="Enter caption text"
+                    placeholder="输入字幕文字"
                     value={caption.t}
                     onChange={(e) =>
                       updateCaption(i, { ...caption, t: e.target.value })
@@ -131,14 +131,14 @@ export function CaptionsPanel({
                     <button
                       onClick={() => splitCaption(i)}
                       className="btn-ghost captions-panel-action-button"
-                      title="Split caption at midpoint"
+                      title="从中间分割字幕"
                     >
                       <Scissors className="icon-sm" />
                     </button>
                     <button
                       onClick={() => deleteCaption(i)}
                       className="btn-ghost captions-panel-action-button"
-                      title="Delete caption"
+                      title="删除字幕"
                     >
                       <Trash2
                         className="icon-sm"

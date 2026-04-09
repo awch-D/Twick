@@ -36,9 +36,9 @@ export function PlaybackPropsPanel({
 
   return (
     <div className="panel-container">
-      <div className="panel-title">Playback</div>
+      <div className="panel-title">播放</div>
       <AccordionItem
-        title="Playback"
+        title="播放"
         icon={<Music2 className="icon-sm" />}
         isOpen={isPlaybackOpen}
         onToggle={() => setIsPlaybackOpen((open) => !open)}
@@ -47,7 +47,7 @@ export function PlaybackPropsPanel({
           {/* Playback rate */}
           <div className="property-section">
             <PropertyRow
-              label="Playback rate"
+              label="播放速度"
               secondary={<span>{playbackRate}×</span>}
             >
               <input
@@ -67,7 +67,7 @@ export function PlaybackPropsPanel({
           {/* Volume (dB) */}
           <div className="property-section">
             <PropertyRow
-              label="Volume"
+              label="音量"
               secondary={
                 <span>
                   {volumeDb <= MIN_DB ? "−∞" : `${Math.round(volumeDb)} dB`}

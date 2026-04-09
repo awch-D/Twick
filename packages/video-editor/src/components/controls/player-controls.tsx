@@ -170,7 +170,7 @@ const PlayerControls: React.FC<PlayerControlsProps> = ({
         <button
           onClick={handleDelete}
           disabled={!hasSelection}
-          title="Delete"
+          title="删除"
           className={`control-btn delete-btn ${
             !hasSelection ? "btn-disabled" : ""
           }`}
@@ -181,7 +181,7 @@ const PlayerControls: React.FC<PlayerControlsProps> = ({
         <button
           onClick={handleSplit}
           disabled={!canSplitSelected}
-          title="Split"
+          title="分割"
           className={`control-btn split-btn ${
             !canSplitSelected ? "btn-disabled" : ""
           }`}
@@ -202,7 +202,7 @@ const PlayerControls: React.FC<PlayerControlsProps> = ({
         {onFollowPlayheadToggle && (
           <button
             onClick={onFollowPlayheadToggle}
-            title={followPlayheadEnabled ? "Follow playhead on (click to disable)" : "Follow playhead off (click to enable)"}
+            title={followPlayheadEnabled ? "跟随播放头（点击关闭）" : "跟随播放头（点击开启）"}
             className={`control-btn ${followPlayheadEnabled ? "follow-btn-active" : ""}`}
           >
             <Crosshair className="icon-md" />
@@ -212,7 +212,7 @@ const PlayerControls: React.FC<PlayerControlsProps> = ({
         <button
           onClick={handleSeekToStart}
           disabled={playerState === PLAYER_STATE.REFRESH}
-          title="Jump to start"
+          title="跳到开头"
           className="control-btn"
         >
           <SkipBack className="icon-md" />
@@ -224,10 +224,10 @@ const PlayerControls: React.FC<PlayerControlsProps> = ({
           disabled={playerState === PLAYER_STATE.REFRESH}
           title={
             playerState === PLAYER_STATE.PLAYING
-              ? "Pause"
+              ? "暂停"
               : playerState === PLAYER_STATE.REFRESH
-              ? "Refreshing"
-              : "Play"
+              ? "刷新中"
+              : "播放"
           }
           className="control-btn play-pause-btn"
         >
@@ -244,7 +244,7 @@ const PlayerControls: React.FC<PlayerControlsProps> = ({
         <button
           onClick={handleSeekToEnd}
           disabled={playerState === PLAYER_STATE.REFRESH}
-          title="Jump to end"
+          title="跳到结尾"
           className="control-btn"
         >
           <SkipForward className="icon-md" />
@@ -264,7 +264,7 @@ const PlayerControls: React.FC<PlayerControlsProps> = ({
           <button
             onClick={handleZoomOut}
             disabled={zoomLevel <= MIN_ZOOM}
-            title="Zoom Out"
+            title="缩小"
             className={`control-btn ${
               zoomLevel <= MIN_ZOOM ? "btn-disabled" : ""
             }`}
@@ -278,7 +278,7 @@ const PlayerControls: React.FC<PlayerControlsProps> = ({
           <button
             onClick={handleZoomIn}
             disabled={zoomLevel >= MAX_ZOOM}
-            title="Zoom In"
+            title="放大"
             className={`control-btn ${
               zoomLevel >= MAX_ZOOM ? "btn-disabled" : ""
             }`}

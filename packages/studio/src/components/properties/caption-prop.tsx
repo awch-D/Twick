@@ -40,101 +40,83 @@ type CaptionColorsState = {
 const CAPTION_STYLE_COLOR_META: Record<string, CaptionStyleColorMeta> = {
   // Word background highlight - white text on colored pill
   highlight_bg: {
-    // Text color, and background pill color used in animation.
     usedColors: ["text", "bgColor"],
     labels: {
-      text: "Text Color",
-      bgColor: "Highlight Background",
+      text: "文字颜色",
+      bgColor: "高亮背景",
     },
   },
-  // Simple word-by-word – text only
   word_by_word: {
-    // Visualizer uses text as fill + outlineColor for stroke, and highlight for active word.
     usedColors: ["text", "highlight", "outlineColor"],
     labels: {
-      text: "Text Color",
-      highlight: "Highlight Color",
-      outlineColor: "Outline Color",
+      text: "文字颜色",
+      highlight: "高亮颜色",
+      outlineColor: "描边颜色",
     },
   },
-  // Word-by-word with a phrase bar background
   word_by_word_with_bg: {
-    // Text color (fill), highlight for active word, outlineColor (stroke), bgColor used by phrase rect.
     usedColors: ["text", "highlight", "bgColor", "outlineColor"],
     labels: {
-      text: "Text Color",
-      bgColor: "Bar Background",
-      highlight: "Highlight Color",
-      outlineColor: "Outline Color",
+      text: "文字颜色",
+      bgColor: "条形背景",
+      highlight: "高亮颜色",
+      outlineColor: "描边颜色",
     },
   },
-  // Classic outlined text
   outline_only: {
-    // Outline-only style: fill + outline color; highlight not used in animation.
     usedColors: ["text", "outlineColor"],
     labels: {
-      text: "Fill Color",
-      outlineColor: "Outline Color",
+      text: "填充颜色",
+      outlineColor: "描边颜色",
     },
   },
-  // Soft rounded box behind text
   soft_box: {
     usedColors: ["text", "bgColor", "highlight", "outlineColor", ],
     labels: {
-      text: "Text Color",
-      highlight: "Highlight Color",
-      bgColor: "Box Background",
-      outlineColor: "Outline Color",
+      text: "文字颜色",
+      highlight: "高亮颜色",
+      bgColor: "方框背景",
+      outlineColor: "描边颜色",
     },
   },
-  // Broadcast style lower-third bar
   lower_third: {
-    // Title text, bar background, highlight color and outline color.
     usedColors: ["text", "bgColor", "outlineColor"],
     labels: {
-      text: "Title Text Color",
-      bgColor: "Bar Background",
-      highlight: "Highlight Color",
-      outlineColor: "Outline Color",
+      text: "标题文字颜色",
+      bgColor: "条形背景",
+      highlight: "高亮颜色",
+      outlineColor: "描边颜色",
     },
   },
-  // Typewriter – text only
   typewriter: {
-    // Text color and outline color (stroke) used by visualizer; highlight not animated.
     usedColors: ["text", "outlineColor"],
     labels: {
-      text: "Text Color",
-      outlineColor: "Outline Color",
+      text: "文字颜色",
+      outlineColor: "描边颜色",
     },
   },
-  // Karaoke – base text plus active word highlight
   karaoke: {
-    // Base text color, active word highlight color, outline color.
     usedColors: ["text", "highlight", "outlineColor"],
     labels: {
-      text: "Text Color",
-      highlight: "Highlight Color",
-      outlineColor: "Outline Color",
+      text: "文字颜色",
+      highlight: "高亮颜色",
+      outlineColor: "描边颜色",
     },
   },
-  // Karaoke-word – single active word, previous words dimmed
   "karaoke-word": {
-    // Same color needs as karaoke.
     usedColors: ["text", "highlight", "outlineColor"],
     labels: {
-      text: "Text Color",
-      highlight: "Highlight Color",
-      outlineColor: "Outline Color",
+      text: "文字颜色",
+      highlight: "高亮颜色",
+      outlineColor: "描边颜色",
     },
   },
-  // Pop / scale – text only
   pop_scale: {
-    // Text color, highlight color for active word, and outline color; no background.
     usedColors: ["text", "highlight", "outlineColor"],
     labels: {
-      text: "Text Color",
-      highlight: "Highlight Color",
-      outlineColor: "Outline Color",
+      text: "文字颜色",
+      highlight: "高亮颜色",
+      outlineColor: "描边颜色",
     },
   },
 };
@@ -142,9 +124,9 @@ const CAPTION_STYLE_COLOR_META: Record<string, CaptionStyleColorMeta> = {
 const DEFAULT_COLOR_META: CaptionStyleColorMeta = {
   usedColors: ["text", "bgColor", "outlineColor"],
   labels: {
-    text: "Text Color",
-    bgColor: "Background Color",
-    outlineColor: "Outline Color",
+    text: "文字颜色",
+    bgColor: "背景颜色",
+    outlineColor: "描边颜色",
   },
 };
 
@@ -352,10 +334,10 @@ export function CaptionPropPanel({
     DEFAULT_COLOR_META;
 
   const defaultColorLabels: Record<CaptionColorKey, string> = {
-    text: "Text Color",
-    bgColor: "Background Color",
-    highlight: "Highlight Color",
-    outlineColor: "Outline Color",
+    text: "文字颜色",
+    bgColor: "背景颜色",
+    highlight: "高亮颜色",
+    outlineColor: "描边颜色",
   };
 
   const renderColorControl = (key: CaptionColorKey) => {
@@ -412,13 +394,13 @@ export function CaptionPropPanel({
               onChange={(e) => handleUseTrackDefaultsChange(e.target.checked)}
               className="checkbox-purple"
             />
-            Use track defaults
+            使用轨道默认样式
           </label>
         </div>
       </div>
 
       <div className="panel-section">
-        <label className="label-dark">Caption Style</label>
+        <label className="label-dark">字幕样式</label>
         <select
           value={capStyle.value}
           onChange={(e) => {
@@ -440,7 +422,7 @@ export function CaptionPropPanel({
 
       {/* Font Size */}
       <div className="panel-section">
-        <label className="label-dark">Font Size</label>
+        <label className="label-dark">字号</label>
         <div className="slider-container">
           <input
             type="range"
@@ -461,7 +443,7 @@ export function CaptionPropPanel({
 
       {/* Font */}
       <div className="panel-section">
-        <label className="label-dark">Font</label>
+        <label className="label-dark">字体</label>
         <select
           value={fontFamily}
           onChange={(e) => {
@@ -481,7 +463,7 @@ export function CaptionPropPanel({
 
       {/* Colors */}
       <div className="panel-section">
-        <label className="label-dark">Colors</label>
+        <label className="label-dark">颜色</label>
         <div className="color-section">
           {/* Highlight toggle only when style supports highlight color */}
           {currentColorMeta.usedColors.includes("highlight") && (
@@ -506,7 +488,7 @@ export function CaptionPropPanel({
                   }}
                   className="checkbox-purple"
                 />
-                Use Highlight Color
+                启用高亮颜色
               </label>
             </div>
           )}
@@ -534,7 +516,7 @@ export function CaptionPropPanel({
                   }}
                   className="checkbox-purple"
                 />
-                Use Outline Color
+                启用描边颜色
               </label>
             </div>
           )}

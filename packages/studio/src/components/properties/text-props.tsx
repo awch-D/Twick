@@ -41,9 +41,9 @@ export function TextPropsPanel({
 
   return (
     <div className="panel-container">
-      <div className="panel-title">Typography</div>
+      <div className="panel-title">排版</div>
       <AccordionItem
-        title="Typography"
+        title="排版"
         icon={<Type className="icon-sm" />}
         isOpen={isTypographyOpen}
         onToggle={() => setIsTypographyOpen((open) => !open)}
@@ -52,7 +52,7 @@ export function TextPropsPanel({
           {/* Font size */}
           <div className="property-section">
             <PropertyRow
-              label="Font size"
+              label="字号"
               secondary={<span>{textProps.fontSize ?? 48}px</span>}
             >
               <input
@@ -70,12 +70,12 @@ export function TextPropsPanel({
 
           {/* Style: bold / italic */}
           <div className="property-section">
-            <PropertyRow label="Style">
+            <PropertyRow label="样式">
               <button
                 type="button"
                 className={`form-btn ${isBold ? "active" : ""}`}
                 onClick={toggleBold}
-                title="Bold"
+                title="粗体"
               >
                 <Bold className="icon-sm" />
               </button>
@@ -83,7 +83,7 @@ export function TextPropsPanel({
                 type="button"
                 className={`form-btn ${isItalic ? "active" : ""}`}
                 onClick={toggleItalic}
-                title="Italic"
+                title="斜体"
               >
                 <Italic className="icon-sm" />
               </button>
@@ -92,12 +92,12 @@ export function TextPropsPanel({
 
           {/* Alignment */}
           <div className="property-section">
-            <PropertyRow label="Align">
+            <PropertyRow label="对齐">
               <button
                 type="button"
                 className={`form-btn ${currentAlign === "left" ? "active" : ""}`}
                 onClick={() => setAlign("left")}
-                title="Align left"
+                title="左对齐"
               >
                 <AlignLeft className="icon-sm" />
               </button>
@@ -107,7 +107,7 @@ export function TextPropsPanel({
                   currentAlign === "center" ? "active" : ""
                 }`}
                 onClick={() => setAlign("center")}
-                title="Align center"
+                title="居中对齐"
               >
                 <AlignCenter className="icon-sm" />
               </button>
@@ -117,7 +117,7 @@ export function TextPropsPanel({
                   currentAlign === "right" ? "active" : ""
                 }`}
                 onClick={() => setAlign("right")}
-                title="Align right"
+                title="右对齐"
               >
                 <AlignRight className="icon-sm" />
               </button>

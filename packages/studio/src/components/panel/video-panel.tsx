@@ -45,7 +45,7 @@ export function VideoPanel({
   const { playingVideo, togglePlayPause } = useVideoPreview();
   return (
     <div className="panel-container">
-      <div className="panel-title">Video Library</div>
+      <div className="panel-title">视频库</div>
      
      {/* Add by URL */}
       {showAddByUrl && (
@@ -127,7 +127,7 @@ export function VideoPanel({
           <div className="empty-state">
             <div className="empty-state-content">
               <Wand2 className="empty-state-icon" />
-              <p className="empty-state-text">No videos found</p>
+              <p className="empty-state-text">暂无视频</p>
             </div>
           </div>
         )}
@@ -140,7 +140,7 @@ export function VideoPanel({
               onClick={onLoadMore}
               disabled={isLoading}
             >
-              {isLoading ? "Loading..." : "Load more"}
+              {isLoading ? "加载中..." : "加载更多"}
             </button>
           </div>
         )}

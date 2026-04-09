@@ -129,16 +129,16 @@ export function AnnotationStylePanel({
   return (
     <div className="panel-container">
       <AccordionItem
-        title="Shape style"
+        title="形状样式"
         icon={<Palette className="icon-sm" />}
         isOpen={styleOpen}
         onToggle={() => setStyleOpen((open) => !open)}
       >
         <div className="properties-group">
           <div className="panel-section">
-            <label className="label-dark">Color</label>
+            <label className="label-dark">颜色</label>
             <div className="color-control">
-              <label className="label-small">Fill</label>
+              <label className="label-small">填充</label>
               <div className="color-inputs">
                 <input
                   type="color"
@@ -156,7 +156,7 @@ export function AnnotationStylePanel({
             </div>
           </div>
           <div className="panel-section">
-            <label className="label-dark">Opacity</label>
+            <label className="label-dark">不透明度</label>
             <div className="slider-container">
               <input
                 type="range"
@@ -177,7 +177,7 @@ export function AnnotationStylePanel({
           {radius !== null && (
             <div className="panel-section">
               <label className="label-dark">
-                {shape instanceof CircleElement ? "Radius (size)" : "Corner radius"}
+                {shape instanceof CircleElement ? "半径（大小）" : "圆角半径"}
               </label>
               <div className="slider-container">
                 <input
@@ -197,7 +197,7 @@ export function AnnotationStylePanel({
           {/* Thickness for line */}
           {thickness !== null && shape instanceof LineElement && (
             <div className="panel-section">
-              <label className="label-dark">Thickness</label>
+              <label className="label-dark">粗细</label>
               <div className="slider-container">
                 <input
                   type="range"

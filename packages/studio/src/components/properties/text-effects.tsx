@@ -56,9 +56,9 @@ export function TextEffects({
 
   return (
     <div className="panel-container">
-      <div className="panel-title">Text Effects</div>
+      <div className="panel-title">文字特效</div>
       <AccordionItem
-        title="Effects"
+        title="特效"
         icon={<SparklesIcon className="icon-sm" />}
         isOpen={isEffectsOpen}
         onToggle={() => setIsEffectsOpen((open) => !open)}
@@ -66,13 +66,13 @@ export function TextEffects({
         <div className="properties-group">
           {/* Text Effect Selection */}
           <div className="property-section">
-            <PropertyRow label="Preset">
+            <PropertyRow label="预设">
               <select
                 value={currentEffect?.getName() || ""}
                 onChange={(e) => handleUpdateEffect({ name: e.target.value })}
                 className="select-dark w-full"
               >
-                <option value="">No Effect</option>
+                <option value="">无特效</option>
                 {TEXT_EFFECTS.map((effect) => (
                   <option key={effect.name} value={effect.name}>
                     {effect.name.charAt(0).toUpperCase() + effect.name.slice(1)}
@@ -87,7 +87,7 @@ export function TextEffects({
             <>
               {/* Delay */}
               <div className="property-section">
-                <PropertyRow label="Delay (s)">
+                <PropertyRow label="延迟（秒）">
                   <input
                     type="number"
                     min="0"
@@ -104,7 +104,7 @@ export function TextEffects({
 
               {/* Duration */}
               <div className="property-section">
-                <PropertyRow label="Duration (s)">
+                <PropertyRow label="时长（秒）">
                   <input
                     type="number"
                     min="0.1"
@@ -121,7 +121,7 @@ export function TextEffects({
 
               {/* Buffer Time */}
               <div className="property-section">
-                <PropertyRow label="Buffer (s)">
+                <PropertyRow label="缓冲（秒）">
                   <input
                     type="number"
                     min="0.05"
